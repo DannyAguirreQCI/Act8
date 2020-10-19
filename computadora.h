@@ -2,6 +2,7 @@
 #define COMPUTADORA_H
 
 #include <iostream>
+#include<iomanip>
 using namespace std;
 
 class Computadora
@@ -24,6 +25,35 @@ public:
 
     void setMemoriaROM(const string &valor);
     string getMemoriaROM() const;
+
+    friend ostream& operator<<(ostream &out, const Computadora &c)
+    {
+        out<<left;
+        out<<setw(10)<<c.sistemaoperativo;
+        out<<setw(10)<<c.memoriaram;
+        out<<setw(10)<<c.nombreequipo;
+        out<<setw(10)<<c.memoriarom;
+        out<<endl;
+
+        return out;
+    }
+
+    friend istream& operator>> (istream &in, Computadora &c)
+    {
+        cout<<"Sistema Operativo:";
+        getline(cin, c.sistemaoperativo);
+
+        cout<<"Memoria RAM:";
+        getline(cin, c.memoriaram);
+
+        cout<<"Nombre del equipo:";
+        cin >> c.nombreequipo;
+
+        cout<<"Memoria ROM:";
+        cin >> c.memoriarom;
+
+        return in;
+    }
 
 private:
     string sistemaoperativo;

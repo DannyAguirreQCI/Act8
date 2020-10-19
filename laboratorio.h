@@ -10,8 +10,15 @@ class Laboratorio
 
 public:
     Laboratorio();
-    void agregarComponente(const Computadora &p);
+    void agregarComponente(const Computadora &c);
     void mostrar();
+
+    friend Laboratorio& operator<<(Laboratorio &l, const Computadora &c)
+    {
+        l.agregarComponente(c);
+
+        return l;
+    }
 };
 
 #endif
