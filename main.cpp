@@ -5,7 +5,11 @@ using namespace std;
 
 int main()
 {
-   Computadora c02 = Computadora(  "Windows",
+    Laboratorio l;
+    l.recuperar();
+    l.recuperar();
+    l.mostrar();
+   /*Computadora c02 = Computadora(  "Windows",
                                 "16GB",
                                 "Lenovo",
                                 "1TB");
@@ -15,18 +19,20 @@ int main()
     c03.setNombreEquipo("HP");
     c03.setMemoriaROM("500GB");
 
-    Laboratorio lb;
+    Laboratorio lb;*/
 
     //lb.agregarComponente(c02);
     //lb.agregarComponente(c03);
-    lb << c02<<c03;
+    /*lb << c02<<c03;*/
 
-    Computadora c04;
+    /*Computadora c04;
     cin>>c04;
-    lb<<c04;
+    lb<<c04;*/
 
 
-    lb.mostrar();
+    /*lb.mostrar();
+    lb.respaldar_tabla();
+    lb.respaldar();//linea por linea*/
 
     //cout<<c02;
     //cout<<c03;
